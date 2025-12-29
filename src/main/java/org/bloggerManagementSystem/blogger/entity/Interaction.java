@@ -15,7 +15,7 @@ public class Interaction {
     private Long interactionID;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "blogID",nullable = false, referencedColumnName = "blogID")
+    @JoinColumn(name = "blogID",referencedColumnName = "blogID")
     private Blog blog;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -47,4 +47,51 @@ public class Interaction {
         this.reactionTimestamp = reactionTimestamp;
     }
 
+    public Long getInteractionID() {
+        return interactionID;
+    }
+
+    public void setInteractionID(Long interactionID) {
+        this.interactionID = interactionID;
+    }
+
+    public Blog getBlog() {
+        return blog;
+    }
+
+    public void setBlog(Blog blog) {
+        this.blog = blog;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Comment getComment() {
+        return comment;
+    }
+
+    public void setComment(Comment comment) {
+        this.comment = comment;
+    }
+
+    public InteractionType getType() {
+        return type;
+    }
+
+    public void setType(InteractionType type) {
+        this.type = type;
+    }
+
+    public LocalDateTime getReactionTimestamp() {
+        return reactionTimestamp;
+    }
+
+    public void setReactionTimestamp(LocalDateTime reactionTimestamp) {
+        this.reactionTimestamp = reactionTimestamp;
+    }
 }
